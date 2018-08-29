@@ -11,6 +11,7 @@ class App extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
   render() {
+      const stateC = { items:["a","b", "asdfcasascas"],text: 'nnn'};
       const todos = [{text: "Do COSW Lab", priority: 99999999999, dueDate: new Date(2018, 9, 30)},
           {text: "Learn React", priority: 5, dueDate: new Date()},
           {text: "Learn about APIs", priority: 4, dueDate: new Date(2018, 8, 30)},
@@ -25,6 +26,7 @@ class App extends Component {
               </p>
               <h1>Consult your personal list of assignements </h1>
               <h3>TODO</h3>
+              <h1>Items: {stateC.text}</h1>
               <TodoList list={this.stateC} />
               <form onSubmit={this.handleSubmit}>
                   <label htmlFor="new-todo">
@@ -33,7 +35,7 @@ class App extends Component {
                   <input
                       id="new-todo"
                       onChange={this.handleChange}
-                      value={this.stateC.text}
+                      value={stateC.text}
                   />
                   <button>
                       Add #{this.stateC.items.length + 1}
